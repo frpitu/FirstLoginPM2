@@ -25,7 +25,7 @@ final class Plugin extends PluginBase implements Listener
 	{
 		$player = $event->getPlayer();
 		if (!$this->joinnedListFile->exists($player->getName())) {
-			$player->sendMessage('§eAre you playing on this server for the first time? Welcome, ' . $player->getName());
+			$this->getServer()->brodcastMessage('§e - É a primeira vez do jogador ' . $player->getName() . ' jogando no servidor, seja bem-vindo!');
 			$this->joinnedListFile->set($player->getName());
 			$this->joinnedListFile->save();
 		}
