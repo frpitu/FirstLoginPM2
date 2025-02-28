@@ -13,14 +13,14 @@ final class Plugin extends PluginBase implements Listener
 {
 	/** @var Config */
 	public $joinnedListFile;
-
+	
 	public function onEnable()
 	{
 		@mkdir($this->getDataFolder());
 		$this->joinnedListFile = new Config($this->getDataFolder() . 'joinned.txt', Config::ENUM);
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
 	}
-
+	
 	public function onJoin(PlayerJoinEvent $event)
 	{
 		$player = $event->getPlayer();
